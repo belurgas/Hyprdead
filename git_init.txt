@@ -1,5 +1,5 @@
 # For github login & setup
-sudo pacman -S git
+sudo pacman -S git base-devel
 sudo pacman -S github-cli
 gh auth login
 
@@ -34,7 +34,85 @@ in hyprland.conf => add {
 
 https://www.reddit.com/r/hyprland/comments/11r1iip/export_path/
 
+# fish
+sudo pacman -S fish
+fish
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+fisher install jorgebucaran/nvm.fish
+fisher install IlanCosman/tide@v5
+chsh -s /usr/bin/fish
+set -U fish_greeting
+
+# YAY
+sudo pacman -S git base-devel
+git clone https://aur.archlinux.org/yay.git  
+cd yay  
+makepkg -si  
+
+# alsa
+sudo pacman -S alsa-lib alsa-plugins alsa-tools alsa-utils
+
 # AUDIO
 sudo pacman -S pipewire-{jack,alsa,pulse}
 sudo pacman -S wireplumber
 systemctl --user enable --now pipewire pipewire-pulse wireplumber
+
+# установка arch
+mkswap /dev/sdb4 
+swapom /dev/sdb4
+mkfs.fat -F32 /deb/sdb3
+mkfs.ext4 /dev/sdb1
+mkfs.ext4 /dev/sdb1
+
+mount /dev/sdb1 /mnt 
+
+mkdir /mnt/efi
+mkdir /mnt/home
+
+mount /dev/sdb2 /mnt/home
+mount /deb/sdb3 /mnt/efi
+
+pacstrap /mnt base linux linux-firmware
+
+#GENFSTAB
+genfstab -U /mnt >> /mnt/etc/fstab
+vim /mnt/etc/fstab -> проверяем всё ли так
+
+arch-chroot /mnt
+ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
+ls /usr/share/zoneinfo
+hwclock --systohc
+pacman -S vim sudo
+
+vim /etc/locale.gen -> en_US; ru_RU
+locale-gen
+
+echo "LANG=en_US.UTF-8" >> /etc/locale.conf
+
+# USER
+passwd
+useradd -m beluga
+passwd beluga
+usermod -aG wheel,audio,video,optical,storage beluga
+userdbctl groups-of-user beluga
+EDITOR=vim
+visudo -> %wheel (first # delet)
+
+# GRUB
+pacman -S grub
+pacman -S efibootmgr dosfstools os-prober mtools
+
+mkdir /boot/EFI
+mount /dev/sdb3 /boot/EFI
+grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck
+grub-mkconfig -o /boot/grub/grub.cfg
+sudo pacman -S dhcpcd ntp
+
+-- reboot
+
+systemctl enable dhcpcd
+systemctl enable ntpd
+sudo vim /etc/pacman.conf -> [multilib] & Include under mltlb
+Sudo pacman -Sy | If didn't work -> reboot and try again
+
+
