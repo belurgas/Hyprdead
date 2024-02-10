@@ -2,3 +2,9 @@
 sudo pacman -S git
 sudo pacman -S github-cli
 gh auth login
+
+# For add & commit
+git add file.exe // example
+git commit -m "your text here"
+git branch -M main // for choice barnch
+git pus -u origin main 
