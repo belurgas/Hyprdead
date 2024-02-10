@@ -8,3 +8,26 @@ git add file.exe // example
 git commit -m "your text here"
 git branch -M main // for choice barnch
 git pus -u origin main 
+
+
+# Hyprland install
+
+sudo pacman -S hyprland swww python rustup fish alacritty wofi xdg-dekstop-portal-hyprland grim slurp wl-clipboard nvidia-dkms
+
+# GRUB EDIT FOR NVIDIA
+vim /etc/default/grub -- GRUB_CMDLINE_LINUX_DEFAULT=nvidia_drm.modeset=1 | after - grub-mkconfig -o /boot/grub/grub.cfg
+MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm) in /etc/mkinitcpio.conf | after - mkinitcpio --config /etc/mkinitcpio.conf --generate /boot/initramfs-custom.img 
+
+sudo pacman -S linux-headers
+
+in /etc/modprobe.d/nvidia.conf add - options nvidia-drm modeset=1
+
+sudo pacman -S qt5-wayland qt5ct libva libva-nvidia-driver-git
+
+in hyprland.conf => add {
+ env = LIBVA_DRIVER_NAME,nvidia
+ env = XDG_SESSION_TYPE,wayland
+ env = GBM_BACKEND,nvidia-drm
+ env = __GLX_VENDOR_LIBRARY_NAME,nvidia
+ env = WLR_NO_HARDWARE_CURSORS,1 
+}
