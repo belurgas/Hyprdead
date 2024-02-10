@@ -1,0 +1,4 @@
+# For github login & setup
+sudo pacman -S git
+sudo pacman -S github-cli
+gh auth login
