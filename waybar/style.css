@@ -1,0 +1,191 @@
+* {
+    font-family: JetBrainsMono-Bold, Symbols Nerd Font;
+    font-size: 12px
+}
+
+window#waybar {
+    background-color: transparent;
+}
+
+#workspaces {
+    margin-right: 10px;
+    margin-left: 20px;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    background-color: transparent;
+}
+
+#workspaces button {
+    box-shadow: rgba(0, 0, 0, 0.116) 2px 2px 5px 2px;
+    background: #fff;
+    border-radius: 15px;
+
+    margin-right: 10px;
+    padding-top: 4px;
+    padding-bottom: 2px;
+    padding-right: 10px;
+
+    font-weight: bolder;
+    color: #cba6f7;
+}
+
+#workspaces button.active {
+    padding-right: 20px;
+    box-shadow: rgba(0, 0, 0, 0.288) 2px 2px 5px 2px;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
+    padding-left: 20px;
+    padding-bottom: 3px;
+    background: rgb(202, 158, 230);
+    background: linear-gradient(45deg, rgba(202, 158, 230, 1) 0%, rgba(245, 194, 231, 1) 43%, rgba(180, 190, 254, 1) 80%, rgba(137, 180, 250, 1) 100%);
+    background-size: 300% 300%;
+    animation: gradient 10s ease infinite;
+    color: #fff;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+#language {
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 15px;
+    color: #383c4a;
+    background: #ffffff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bolder;
+}
+
+#keyboard-state {
+    margin-right: 8px;
+    padding-right: 16px;
+    border-radius: 10px 10px 10px 10px;
+    transition: none;
+    color: #ffffff;
+    background: #383c4a;
+}
+
+#custom-pacman {
+    padding-left: 16px;
+    padding-right: 8px;
+    border-radius: 10px 10px 10px 10px;
+    transition: none;
+    color: #ffffff;
+    background: #383c4a;
+}
+
+
+#mode {
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 10px;
+    transition: none;
+    color: #ffffff;
+    background: #383c4a;
+}
+
+#clock {
+    background: rgb(245, 194, 231);
+    background: linear-gradient(45deg, rgba(245, 194, 231, 1) 0%, rgba(203, 166, 247, 1) 64%, rgba(202, 158, 230, 1) 100%);
+    color: #fff;
+    background-size: 300% 300%;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
+    animation: gradient 20s ease infinite;
+    font-size: 15px;
+    font-weight: bolder;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 15px;
+
+}
+
+
+
+#pulseaudio {
+    background-color: #fab387;
+    color: #bf7d54;
+    font-weight: bolder;
+    border-radius: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+#pulseaudio.muted {
+    background-color: #90b1b1;
+}
+
+#memory {
+    background-color: #cba6f7;
+    color: #9a75c7;
+    font-weight: bolder;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 15px;
+}
+
+#cpu {
+    background: rgb(180, 190, 254);
+    background: linear-gradient(52deg, rgba(180, 190, 254, 1) 0%, rgba(137, 220, 235, 1) 32%, rgba(137, 180, 250, 1) 72%, rgba(166, 227, 161, 1) 100%);
+    background-size: 300% 300%;
+    animation: gradient 20s ease infinite;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
+    /* background-color: #b4befe; */
+    color: #fff;
+    border-radius: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: bolder;
+}
+
+#tray {
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 15px;
+    color: #000000;
+    background: #ffffff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+#custom-weather {
+    padding-right: 16px;
+    padding-left: 16px;
+    border-radius: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #ffffff;
+    background: #9a75c7;
+    font-weight: bolder;
+
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
