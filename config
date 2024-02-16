@@ -1,0 +1,84 @@
+{
+  "layer": "top",
+  //"position": "bottom",
+  //"height": 30,
+  "width": 1920,
+  "reload_style_on_change": true,
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["image/album", "custom/media", "pulseaudio"],
+  "modules-right": ["custom/updates", "cpu", "tray", "clock"],
+  
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "persistent_workspaces": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [],
+    },
+  },
+  
+  "image/album": {
+    "exec": "$HOME/.config/waybar/scripts/mpw --image",
+    "size": 30,
+    "interval": 1,
+  },
+
+  "custom/media": {
+    "format": "{}",
+    "tooltip": false,
+    "return-type": "json",
+    "max-length": 40,
+    "interval": 1,
+    "exec": "$HOME/.config/waybar/scripts/mpw --music",
+
+  },
+
+  "pulseaudio": {
+          "tooltip": false,
+          "scroll-step": 5,
+          "format": "{icon} {volume}%",
+          "format-muted": "{icon} {volume}%",
+          "on-click": "pavucontrol",
+          "format-icons": {
+                  "default": ["", "", ""]
+          },
+  },
+ 
+  "cpu": {
+    "interval": 1,
+    "format": "{usage}% ",
+    "tooltip": false,
+  },
+
+  "tray": {
+        "icon-size": 20,
+        "spacing": 10,
+        "tooltip": false,
+  },
+
+  "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "interval": 60,
+        "format": "{:%H:%M}",
+        "max-length": 25
+  },
+
+  "custom/updates": {
+    "format": "{} 󰣇",
+    "exec": "checkupdates | wc -l",
+    "exec-if": "[[ $(checkupdates | wc -l) != 0 ]]",
+    // "interval": 60,
+    "on-click": "alacritty -e sudo pacman -Syu && notify-send 'Система обновленна! Спасибо 󰱳' && pkill -SIGRTMIN+8 waybar",
+    "signal": 8, // Периписать на раст
+  },
+
+  "custom/mem": {
+    "format": "{} 󰕪",
+    "interval": 3,
+    "exec": "free -h | awk '/Mem:/{printf $3}'",
+    "tooltip": false,
+  },
+
+
+}
