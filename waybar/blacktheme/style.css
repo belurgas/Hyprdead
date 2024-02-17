@@ -1,0 +1,135 @@
+* {
+  border-radius: 15px;
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 16px;
+  font-weight: bolder;
+
+  background-color: transparent;
+}
+
+
+#workspaces button lavel {
+  color: white;
+}
+
+#workspace button.active label {
+  color: black;
+}
+
+#workspaces {
+  margin: 10px 25px 10px 10px;
+  background: transparent;
+}
+
+#workspaces button {
+  border: solid white 1.5px;
+  background: radial-gradient(circle at 10% 20%, rgb(0, 0, 0) 0%, rgb(64, 64, 64) 90.2%);
+  border-radius: 15px;
+  margin-right: 10px;
+  padding: 10px;
+  padding-top: 4px;
+  padding-bottom: 2px;
+  color: white;
+  transition: all 0.5s cubic-bezier(.55, -0.68,.48,1.68);
+  box-shadow: rgba(0, 0, 0, 0.116) 2px 2px 5px 2px;;
+}
+
+#workspaces button.active {
+  box-shadow: rgba(0, 0, 0, 0.288) 2px 2px 4px 2px;
+  padding-right: 20px;
+  padding-left: 20px;
+  background: radial-gradient(circle at 10% 20%, rgb(90, 92, 106) 0%, rgb(32, 45, 58) 81.3%);
+  background-size: 400% 400%;
+  animation: gradient_f 20s ease-in-out infinite;
+  transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.68);
+}
+
+#workspaces button:hover {
+  border: dashed white 1.3px;
+  transition: all 0.4s ;
+}
+
+@keyframes gradient_f {
+  0% {
+		background-position: 0% 200%;
+	}
+  50% {
+    background-position: 200% 0%;
+  }
+	100% {
+		background-position: 400% 200%;
+	}
+}
+
+@keyframes AnimationName {
+    0%{background-position:0% 60%}
+    50%{background-position:100% 41%}
+    100%{background-position:0% 60%}
+}
+
+#pulseaudio {
+  border: solid white 1.5px;
+  margin: 10px 10px 10px 0px;
+  font-size: 12px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  transition: none;
+  color: white;
+
+  background-color: black;
+  box-shadow: rgba(0, 0, 0, 0.116) 2px 2px 4px 2px;
+}
+
+#custom-media {
+  border: solid white 1.5px;
+  margin: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 12px;
+  background-color: black;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.116) 2px 2px 4px 2px;
+  background: linear-gradient(120deg, #111111, #2b2b2b, #434343, #000000, #4d4d4d);
+  background-size: 1000% 1000%;
+
+  animation: AnimationName 10s ease infinite;
+}
+
+#clock {
+  border: solid white 1.5px;
+  background-color: black;
+  color: white;
+
+  padding: 0px 20px 0px 20px;
+  margin: 10px 10px 10px 0px;
+  box-shadow: rgba(0, 0, 0, 0.116) 2px 2px 4px 2px;
+}
+
+#cpu {
+  border: solid white 1.5px;
+  margin: 10px;
+  padding: 0px 10px 0px 10px;
+  background-color: black;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.116) 2px 2px 4px 2px;
+}
+
+#custom-updates {
+  border: solid white 1.5px;
+  background-color: black;
+  color: white;
+  margin: 10px;
+  padding: 0px 10px 0px 10px;
+  box-shadow: rgba(0, 0, 0, 0.116) 2px 2px 4px 2px;
+}
+
+#tray {
+  border: solid white 1.5px;
+  background-color: black;
+  color: white;
+
+  margin: 10px;
+  padding: 0px 10px 0px 10px;
+
+}
